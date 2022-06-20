@@ -1,0 +1,14 @@
+version: "3"
+services:
+  codegen:
+    build: .
+    restart: unless-stopped
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '52011:52011' # Public HTTP Port
+
+      # Add any other Stream port you want to expose
+    environment:
+      TZ : 'Asia/Shanghai'
+      # Uncomment this if IPv6 is not enabled on your host
+      # DISABLE_IPV6: 'true'
